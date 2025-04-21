@@ -56,6 +56,16 @@
 
         h2 {
             font-family: var(--font-main);
+            overflow: hidden; /* Prevent overflow */
+            text-overflow: ellipsis; /* Show ellipsis (...) for overflowed text */
+        }
+
+        .feed-header {
+            display: grid;
+            grid-template-columns: 4fr 1fr; /* Two columns: date takes 1 part, title takes 2 parts */
+            gap: 10px; /* Space between the grid items */
+            align-items: center; /* Center items vertically */
+
         }
 
         .feed-container {
@@ -187,6 +197,7 @@
             { name: "ExploitDB", url: "https://www.exploit-db.com/rss.xml", color: randomColour()},
             { name: "Microsoft", url: "https://api.msrc.microsoft.com/update-guide/rss", color: randomColour()},
             { name: "Bleeping Computer", url: "https://www.bleepingcomputer.com/feed/", color: randomColour()},
+            { name: "SecurityOnline.info", url: "https://securityonline.info/feed/", color: randomColour()},
             { name: "Threatpost", url: "https://threatpost.com/feed/", color: randomColour() },
             { name: "Dark Reading", url: "https://www.darkreading.com/rss.xml", color: randomColour() },
             { name: "SANS Webcasts", url: "https://www.sans.org/webcasts/rss", color: randomColour() },
@@ -218,8 +229,10 @@
 
                             feedItem.className = 'feed-item';
                             feedItem.innerHTML = `
-                                <span class="feed-date">${formattedDate}</span>
-                                <h2>${item.title}</h2>
+                                <div class="feed-header">
+                                    <span class="feed-date">${formattedDate}</span>
+                                    <h2>${item.title}</h2>
+                                </div>
                                 <p class="summary">${item.description.replace(/<img[^>]*>/g, '').slice(0, 100)}...</p>
                                 <p class="full-content" style="display: none;">${item.description.replace(/<img[^>]*>/g, '')}</p>
                                 <div class="feed-meta">
