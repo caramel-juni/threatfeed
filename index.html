@@ -223,7 +223,7 @@
                     const response = await fetch("https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(feed.url) + "&api_key=" + encodeURIComponent(api_key));
                     const data = await response.json();
                     if (data.items) {
-                        data.items.slice(0, 3).forEach(item => {
+                        data.items.slice(0, 10).forEach(item => {
                             const feedItem = document.createElement('div');
                             let formattedDate = new Date(item.pubDate).toLocaleDateString();
 
