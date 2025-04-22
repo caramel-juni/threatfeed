@@ -4,9 +4,12 @@ var __name = (target, value) => __defProp(target, "name", { value, configurable:
 // fetchFeeds.js
 async function onRequest(context) {
   const { rss_url } = context.request.query;
-  const api_key = context.env.RSS_API_KEY;
-  console.error(api_key);
+  console.log("RSS URL", rss_url);
+  const api_key = "8veydicfkls4zhdyxhqifnnrjzgcuipyszfsyd99";
   const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rss_url)}&api_key=${encodeURIComponent(api_key)}`);
+  console.log("Response Status:", response.status);
+  console.log("Response Headers:", [...response.headers]);
+  console.log("Response URL:", response.url);
   const data = await response.json();
   return new Response(JSON.stringify(data), {
     headers: { "Content-Type": "application/json" }
@@ -512,7 +515,7 @@ var jsonError = /* @__PURE__ */ __name(async (request, env, _ctx, middlewareCtx)
 }, "jsonError");
 var middleware_miniflare3_json_error_default = jsonError;
 
-// ../.wrangler/tmp/bundle-jpIKIT/middleware-insertion-facade.js
+// ../.wrangler/tmp/bundle-igpnxC/middleware-insertion-facade.js
 var __INTERNAL_WRANGLER_MIDDLEWARE__ = [
   middleware_ensure_req_body_drained_default,
   middleware_miniflare3_json_error_default
@@ -544,7 +547,7 @@ function __facade_invoke__(request, env, ctx, dispatch, finalMiddleware) {
 }
 __name(__facade_invoke__, "__facade_invoke__");
 
-// ../.wrangler/tmp/bundle-jpIKIT/middleware-loader.entry.ts
+// ../.wrangler/tmp/bundle-igpnxC/middleware-loader.entry.ts
 var __Facade_ScheduledController__ = class ___Facade_ScheduledController__ {
   constructor(scheduledTime, cron, noRetry) {
     this.scheduledTime = scheduledTime;
