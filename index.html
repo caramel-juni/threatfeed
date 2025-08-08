@@ -193,6 +193,7 @@
         const feedFilter = document.getElementById('feedFilter');
         const api_key = "8veydicfkls4zhdyxhqifnnrjzgcuipyszfsyd99";
         const rssFeeds = [
+            { name: "CVE Feed", url: "https://cvefeed.io/rssfeed/severity/high.xml", color: randomColour() },
             { name: "pfSense", url: "https://www.netgate.com/blog/tag/releases/rss.xml", color: randomColour()},
             { name: "ExploitDB", url: "https://www.exploit-db.com/rss.xml", color: randomColour()},
             { name: "Microsoft", url: "https://api.msrc.microsoft.com/update-guide/rss", color: randomColour()},
@@ -205,7 +206,6 @@
             { name: "SecurityWeek", url: "https://www.securityweek.com/rss", color: randomColour() },
             { name: "The Hacker News", url: "https://feeds.feedburner.com/TheHackersNews", color: randomColour()},
             { name: "Schneier on Security", url: "https://www.schneier.com/blog/atom.xml", color: randomColour() },
-            { name: "ISC SANS", url: "https://isc.sans.edu/rssfeed.xml", color: randomColour() },
             { name: "Cisco Security Blog", url: "https://blogs.cisco.com/security/feed", color: randomColour() },
         ];
         
